@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity"
+    android:gravity="center">
 
     <Button
-        android:id="@+id/bt_logout"
-        android:layout_marginTop="10dp"
+        android:id="@+id/bt_login"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="LogOut"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:text="Login"/>
 
 </RelativeLayout>

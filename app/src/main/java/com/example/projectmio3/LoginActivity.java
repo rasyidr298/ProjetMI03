@@ -6,25 +6,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.projectmio3.R;
 import com.example.projectmio3.helper.SharedPref;
 
-public class MainActivity extends AppCompatActivity {
-    Button mBtnLogout;
+public class LoginActivity extends AppCompatActivity {
+    Button mBtnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
-        mBtnLogout = findViewById(R.id.bt_logout);
+        mBtnLogin = findViewById(R.id.bt_login);
 
-        mBtnLogout.setOnClickListener(new View.OnClickListener() {
+        mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPref.getInstance(MainActivity.this).setLogin(false);
+                SharedPref.getInstance(LoginActivity.this).setLogin(true);
 
-                Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
