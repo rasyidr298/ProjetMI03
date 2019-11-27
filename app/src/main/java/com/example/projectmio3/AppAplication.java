@@ -8,8 +8,6 @@ import com.example.projectmio3.room.AppDatabase;
 public class AppAplication extends Application {
     public static AppDatabase db;
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();

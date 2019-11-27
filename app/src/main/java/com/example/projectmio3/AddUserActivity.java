@@ -1,12 +1,16 @@
 package com.example.projectmio3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.projectmio3.room.Mahasiswa;
+
+import static com.example.projectmio3.AppAplication.db;
 
 public class AddUserActivity extends AppCompatActivity {
     private Button insertData;
@@ -38,6 +42,11 @@ public class AddUserActivity extends AppCompatActivity {
                     mahasiswa.setNim(etNim.getText().toString());
 
                     //insert
+                    db.userDao().insertAll(mahasiswa);
+                    startActivity(new Intent(AddUserActivity.this,DetailActivity.class));
+                }else {
+                    Toast.makeText(getApplicationContext(),"Mohon masukan dengan benar",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
